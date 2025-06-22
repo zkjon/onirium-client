@@ -40,11 +40,15 @@
 :root {
   --background: #0b0c10;
   --foreground: #eaeaea;
+  --primary: #999da0;
+  --secondary: var(--color-gray-600);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
+  --color-theme-background: var(--background);
+  --color-theme-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
 }
 
 @media (prefers-color-scheme: dark) {
