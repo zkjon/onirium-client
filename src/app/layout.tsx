@@ -1,15 +1,9 @@
 import { type Metadata } from 'next'
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from '@clerk/nextjs'
 import { Fira_Code, Fira_Mono } from 'next/font/google'
 import './globals.css'
+import { ClerkProvider } from '@clerk/nextjs'
 
-import { enUS } from '@clerk/localizations'
+
 
 const firaSans = Fira_Code({
   subsets: ['latin'],
@@ -33,20 +27,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ClerkProvider localization={enUS}>
       <html lang="en">
         <body className={`${firaSans.variable} ${firaMono.variable} antialiased`}>
-          <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <SignedOut>
-              <SignInButton mode='modal' />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
-          {children}
+          <ClerkProvider>
+            {children}
+          </ClerkProvider>
         </body>
       </html>
-    </ClerkProvider>
   )
 }
