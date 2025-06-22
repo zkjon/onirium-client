@@ -1,21 +1,50 @@
 @import "tailwindcss";
 
-:root {
-  /* EAEAEA
-  0B0C10
-  999DA0 */
-  --background: #eaeaea;
-  --foreground: #0b0c10;
+/* regular, bold, ligth, medium, semibold, regular */
+@font-face {
+  font-family: "Fira";
+  src: url("/FiraCode-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fira";
+  src: url("/FiraCode-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fira";
+  src: url("/FiraCode-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fira";
+  src: url("/FiraCode-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fira";
+  src: url("/FiraCode-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
-  --font-geist-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-geist-mono: "Courier New", Courier, monospace;
+:root {
+  --background: #0b0c10;
+  --foreground: #eaeaea;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,5 +57,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Fira", sans-serif;
 }
